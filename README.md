@@ -27,5 +27,6 @@
 * You can search your “Employee” by inserting a name in  “Search Employee Name:” field 
 
 ![alt text](https://i.imgur.com/X3BrePq.png)
+* You can delete an  “Employee” by pressing “cross” icon in the “Delete” column 
 
-
+![alt text](https://i.imgur.com/vYaYwjQ.png)

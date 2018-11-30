@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/css/main.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <div>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="empName">Employee Name:</label>
+                <br>
+                <input type="text" class="form-control" id="empName" placeholder="Enter Name"/>
+            </div>
+            <p>
+            <div class="form-group">
+                <label for="empActive">Active:</label>
+                <input type="checkbox" class="checkmark" value="isActive"  checked="checked" id="empActive" placeholder="Enter Active"/>
+            </div>
+            <p>
+            <div class="form-group">
+                <label for="empDepartment">Department:</label>
+                <select class="form-control" id="empDepartment">
+                </select>
+            </div>
+        </form>
+        <p>
+        <a onclick="addEmployee()" class="btn btn-default">Add New Employee</a>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="name">Department Name:</label>
+                <br>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name"/>
+            </div>
+        <p>
+        <a onclick="addEmpDepartment()" class="btn btn-default department-btn">Add New Department</a>
+            <div class="form-group">
+                <label for="empNameSearch">Search Employee Name:</label>
+                <br>
+                <input type="text" class="form-control" id="empNameSearch" placeholder="Enter Name" onkeyup="doGetEmployees(0)"/>
+            </div>
+        </form>
+    </div>
+
+    <div id="resultMsgDiv">
+    </div>
+
+    <div  style="margin:20px 0px 20px 0px">
+        <table id="customerTable" class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>View</th>
+                <th>Edit</th>
+                <th>empID</th>
+                <th>empName</th>
+                <th>empActive</th>
+                <th>empDepartment</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <ul class="pagination">
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(0)">1</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(1)">2</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(2)">3</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(3)">4</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(4)">5</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(5)">6</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(6)">7</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(7)">8</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(8)">9</button></li>
+                <li><button class="btn btn-default color-blue" onclick="doGetEmployees(9)">10</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal View -->
+    <div class="modal fade" id="viewModal" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">View</h5>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Edit</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <label>empID:</label>
+                        <text id="emplIdForm"></text>
+                        <div class="form-group">
+                            <label for="empNameForm">empName:</label>
+                            <input type="text" class="form-control" id="empNameForm" placeholder="Enter Active"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="empActiveForm">empActive:</label>
+                            <input type="checkbox" class="checkmark" value="isActive"  checked="checked" id="empActiveForm" placeholder="Enter Active"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="empDepartmentForm">empDepartment:</label>
+                            <select class="form-control" id="empDepartmentForm">
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="editEmployee()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+#customerTable td {
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+
+#empNameForm,
+#empActiveForm{
+    display: inline-block;
+    width: 250px;
+}
+
+#empDepartmentForm{
+    display: inline-block;
+    width: 100px;
+}
+
+.pagination {
+    margin: 0 auto;
+}
+
+.department-btn{
+    margin-top: 15px;
+}
+
+#content{
+    padding: 15px;
+    border: solid 1px #eee;
+    max-width: 660px;
+    margin: auto;
+    border-radius: 4px;
+}
+
+form {
+    margin: 20px 0;
+}
